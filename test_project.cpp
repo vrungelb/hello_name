@@ -14,7 +14,7 @@ int main()
     sf::Texture bgTexture;
     if (!bgTexture.loadFromFile("background.png"))
     {
-        std::cerr << "Error: can't load background.png\n";
+        std::cerr << "Image not found!\n";
         return 1;
     }
 
