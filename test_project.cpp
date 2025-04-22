@@ -12,11 +12,12 @@ int main()
 
     // подключение фона
     sf::Texture bgTexture;
-    if (!bgTexture.loadFromFile("/root/projects/hello_name_project/background.png.png"))
+    if (!bgTexture.loadFromFile("background.png"))
     {
         std::cerr << "Error: can't load background.png\n";
         return 1;
     }
+
     sf::Sprite bg(bgTexture);
     bg.setScale(
         float(window.getSize().x) / bgTexture.getSize().x,
@@ -120,12 +121,13 @@ int main()
                 // клик по кнопке — выводим приветствие
                 else if (button.getGlobalBounds().contains(mp))
                 {
-                    sf::String greeting = L"Привет " + userInput;
+                    sf::String greeting = L"Привет, " + userInput;
                     inputText.setString(greeting);
                 }
             }
         }
 
+        // отрисовка
         window.clear();
         window.draw(bg);
         window.draw(inputBox);
